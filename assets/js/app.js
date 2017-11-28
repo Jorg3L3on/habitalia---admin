@@ -28,12 +28,19 @@
 
   });
 
+  btnLogout.addEventListener('click', e => {
+    firebase.auth().signOut();
+  });
+  
+
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser){
       window.location.href = "inicio/index.html";
+      btnLogout.classList.remove('hide');
     }
     else{
       console.log('not logged in');
+      btnLogout.classList.add('hide');
     }
 
   });

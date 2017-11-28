@@ -19,7 +19,8 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 
 </head>
 
@@ -77,12 +78,13 @@
                         </button>
                     </div>
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse">
-                            
-                         
-                        </button>
-                        <a class="navbar-brand" href="#"> Menu </a>
-                    </div>
+                            <button type="button" class="navbar-toggle" data-toggle="collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
                     
                 </div>
             </nav>
@@ -133,33 +135,24 @@
                                         
                                     </h4>
                                     <form>
-                                        <div class="row">
-                                            
-                                            <div class="col-md-5">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Nombre(s)</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
+                                        
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Apellido paterno</label>
-                                                    <input type="text" class="form-control">
+                                                    <input id="aPaterno" type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Apellido materno</label>
-                                                    <input type="text" class="form-control">
+                                                    <input id="aMaterno" type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Edad</label>
-                                                    <input type="text" class="form-control">
+                                                    <input id="edad" type="text" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
@@ -168,24 +161,13 @@
                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Num de telefono</label>
-                                                    <input type="text" class="form-control">
+                                                    <input id="numTelefono" type="text" class="form-control">
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Ciudad</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Código postal</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
+                                            
                                         </div>
                                         
-                                        <button type="submit" class="btn  pull-right">Editar perfil</button>
+                                        <button onclick="submitClick()" type="submit" id="submitBtn" class="btn  pull-right">Editar perfil</button>
                                         <div class="clearfix"></div>
                                     </form>
                                 </div>
@@ -210,6 +192,7 @@
         </div>
     </div>
     <script src="../assets/js/app.js" ></script>
+    <script src="../assets/js/index.js"></script>
 </body>
 <!--   Core JS Files   -->
 <script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
@@ -237,7 +220,7 @@
 <!-- Sliders Plugin, full documentation here: https://refreshless.com/nouislider/ -->
 <script src="../assets/js/nouislider.min.js"></script>
 <!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaT9LqX99PkdsO2SYSOEH8jQMmSB-5ojU"></script>
+
 <!--  Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
 <script src="../assets/js/jquery.select-bootstrap.js"></script>
 <!--  DataTables.net Plugin, full documentation here: https://datatables.net/    -->
@@ -254,11 +237,6 @@
 <script src="../assets/js/material-dashboard.js?v=1.2.1"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="../assets/js/demo.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-<script>
-    $(document).ready(function() {
-        demo.initSmallGoogleMaps();
-    });
-</script>
+
 
 </html>
