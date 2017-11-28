@@ -1,12 +1,12 @@
 (function(){
    // Initialize Firebase
-  const config = {
-    apiKey: "AIzaSyAte73gqc2-vDHIHdHFjDzBS9sXY5Husu8",
-    authDomain: "ars-const.firebaseapp.com",
-    databaseURL: "https://ars-const.firebaseio.com",
-    projectId: "ars-const",
-    storageBucket: "ars-const.appspot.com",
-    messagingSenderId: "737141710523"
+   var config = {
+    apiKey: "AIzaSyC3mBXCEbPXUbj2QcMX5Gdjue3mY8_B4o4",
+    authDomain: "habitalia-1510534001961.firebaseapp.com",
+    databaseURL: "https://habitalia-1510534001961.firebaseio.com",
+    projectId: "habitalia-1510534001961",
+    storageBucket: "habitalia-1510534001961.appspot.com",
+    messagingSenderId: "403256057328"
   };
 
   firebase.initializeApp(config);
@@ -36,7 +36,7 @@
       btnLogout.classList.remove('hide');
     }
     else{
-      console.log('not logged in');
+      console.log('No a iniciado sesion');
       //btnLogout.classList.add('hide');
     }
 
