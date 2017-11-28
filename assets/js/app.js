@@ -10,6 +10,7 @@
   };
 
   firebase.initializeApp(config);
+
   const txtEmail = document.getElementById('txtEmail');
   const txtPassword = document.getElementById('txtPassword');
   const btnLogin = document.getElementById('btnLogin');
@@ -24,23 +25,19 @@
 
     const promise = auth.signInWithEmailAndPassword(email, pass);
 
-    promise.cath(e => console.log(e.message));
+    promise.catch(e => console.log(e.message));
 
   });
-
-  btnLogout.addEventListener('click', e => {
-    firebase.auth().signOut();
-  });
-  
 
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser){
+      console.log(firebaseUser);
       window.location.href = "inicio/index.html";
       btnLogout.classList.remove('hide');
     }
     else{
       console.log('not logged in');
-      btnLogout.classList.add('hide');
+      //btnLogout.classList.add('hide');
     }
 
   });
